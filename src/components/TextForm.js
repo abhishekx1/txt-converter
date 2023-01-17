@@ -28,9 +28,7 @@ function TextForm(props) {
 
     // fuction to copy the text 
     const handleCopy = () => {
-        let texts = document.getElementById('myBox');
-        texts.select();
-        navigator.clipboard.writeText(texts.value);
+        navigator.clipboard.writeText(text);
         props.showAlert('Text copied to clipboard!', 'success');
     }
 
@@ -54,15 +52,15 @@ function TextForm(props) {
             </div>
             <div className='align-self-end'>
                 <button className='btn btn-primary ' onClick={handleUpperCase}>Convert Uppercase</button>
-                <button className='btn btn-primary mx-5' onClick={handleLowerCase}>Convert Lowercase</button>
+                <button className='btn btn-primary mx-5 my-1' onClick={handleLowerCase}>Convert Lowercase</button>
                 <button className='btn btn-primary' onClick={handleCopy}>Copy Text</button>
-                <button className='btn btn-primary mx-5' onClick={handleClearSpaces}>Clear Extra Spaces</button>
+                <button className='btn btn-primary mx-5 my-1' onClick={handleClearSpaces}>Clear Extra Spaces</button>
                 <button className='btn btn-primary' onClick={handleClear}>Clear Text</button>
             </div>
 
             <div className='container my-3' style={{color: props.mode==='light'?'black':'white'}}>
                 <h2>Your text summary</h2>
-                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{text.split(/\s+/).filter((element) => {return element.length !== 0}).length} words and {text.length} characters</p>
                 <p>{0.008 * text.split(" ").length} Minutes to read</p>
 
                 <h2>Preview</h2>
