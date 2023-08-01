@@ -35,15 +35,15 @@ function App() {
   return (
     <>
       {/* <BrowserRouter> */}
-        <Navbar title='TxtConverter' aboutText='About' mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <div className='container'>
-          <TextForm showAlert={showAlert} title='Enter the text below:' mode={mode} />
-          {/* <Routes>
+      <Navbar title='TxtConverter' aboutText='About' mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className='container'>
+        <TextForm showAlert={showAlert} title='Enter the text below:' mode={mode} />
+        {/* <Routes>
             <Route exact path="/" element={<TextForm showAlert={showAlert} title='Enter the text below:' mode={mode} />} />
             <Route exact path="/about" element={<About />} />
           </Routes> */}
-        </div>
+      </div>
       {/* </BrowserRouter> */}
     </>
   );
